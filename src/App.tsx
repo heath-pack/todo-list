@@ -1,27 +1,24 @@
-import React, { MouseEventHandler, useState } from 'react';
+import React from 'react';
+import { Layout } from 'antd';
 
-import { useDispatch } from 'react-redux';
+import { CreateTodo } from './app/todos/createTodo/CreateTodo';
+import { TodoList } from './app/todos/todoList/TodoList';
 
-import { addTodo } from './features/todos/actions';
+import './App.scss';
 
 function App() {
-  const dispatch = useDispatch();
-
-  const [inputValue, setInputValue] = useState('');
-
-  const createTodo = (value: string) => dispatch(addTodo(value));
-
-  const handleSubmit = () => {
-    if (inputValue) {
-      createTodo(inputValue);
-      setInputValue('');
-    }
-  };
-
   return (
     <div className="App">
-      <input type="text" value={inputValue} onChange={(e) => setInputValue(e?.target?.value)} />
-      <button onClick={handleSubmit}>Create Todo</button>
+      <Layout>
+        <Layout.Header></Layout.Header>
+
+        <Layout.Sider></Layout.Sider>
+
+        <Layout.Content>
+          <CreateTodo />
+          <TodoList />
+        </Layout.Content>
+      </Layout>
     </div>
   );
 }
