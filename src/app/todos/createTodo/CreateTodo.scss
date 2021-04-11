@@ -1,0 +1,9 @@
+div.input-with-button {
+    display: flex;
+    input:first-of-type {
+        flex: 0 1 60%
+    }
+    button:first-of-type {
+        flex: 0 1 40%
+    }
+}
