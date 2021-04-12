@@ -1,17 +1,15 @@
-import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { Input, Button } from 'antd';
 
-import { useCreateTodo } from './hooks';
+import { useCreateList } from './hooks';
 
-import './CreateTodo.scss';
-
-export const CreateTodo = () => {
-  const { createTodo } = useCreateTodo();
+export const CreateList = () => {
+  const { createTodoList } = useCreateList();
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = () => {
     if (inputValue) {
-      createTodo(inputValue);
+      createTodoList(inputValue);
       setInputValue('');
     }
   };
@@ -27,14 +25,14 @@ export const CreateTodo = () => {
   };
 
   return (
-    <div className="input-with-button">
+    <div>
       <Input
         type="text"
         value={inputValue}
-        onChange={handleInputChange}
         onKeyDown={handleKeyDown}
+        onChange={handleInputChange}
       />
-      <Button onClick={handleSubmit}>Create Todo</Button>
+      <Button onClick={handleSubmit}>Create New Todo List</Button>
     </div>
   );
 };
