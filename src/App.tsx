@@ -1,8 +1,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-import { CreateTodo } from './app/todos/createTodo/CreateTodo';
-import { TodoList } from './app/todos/todoList/TodoList';
+import { TodoPage } from './app/todos/TodoPage';
 import { NavList } from './app/todos/todosNavList/NavList';
 import { CreateList } from './app/todos/createNewList/CreateList';
 
@@ -11,17 +10,17 @@ import './App.scss';
 function App() {
   return (
     <div className="App">
-      <Layout>
-        <Layout.Header></Layout.Header>
+      <Layout className="layout">
+        <Layout.Header>
+          <CreateList />
+        </Layout.Header>
 
         <Layout.Sider>
           <NavList />
         </Layout.Sider>
 
         <Layout.Content>
-          <CreateList />
-          <CreateTodo />
-          <TodoList />
+          <TodoPage />
         </Layout.Content>
       </Layout>
     </div>
