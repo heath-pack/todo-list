@@ -3,11 +3,8 @@ import { Input, Button } from 'antd';
 
 import { useCreateList } from './hooks';
 
-<<<<<<< HEAD
 const PLACEHOLDER = 'Add a new todo list';
 
-=======
->>>>>>> origin/master
 export const CreateList = () => {
   const { createTodoList } = useCreateList();
   const [inputValue, setInputValue] = useState('');
