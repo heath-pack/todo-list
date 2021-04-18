@@ -9,7 +9,7 @@ export const useCreateTodo = () => {
   const selectedList = useSelector(getSelectedList);
 
   const createTodo = (value: string) =>
-    dispatch(addTodo({ value, listId: selectedList }));
+    dispatch(addTodo({ value, listId: selectedList.listId }));
 
   return { createTodo };
 };
