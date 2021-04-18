@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo } from '../actions';
 
-import { getSelectedList } from '../selectors';
+import { addTodo } from '../../actions';
+import { getSelectedList } from '../../selectors';
 
 export const useCreateTodo = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ export const useCreateTodo = () => {
   const selectedList = useSelector(getSelectedList);
 
   const createTodo = (value: string) =>
-    dispatch(addTodo({ value, listId: selectedList }));
+    dispatch(addTodo({ value, listId: selectedList.listId }));
 
   return { createTodo };
 };

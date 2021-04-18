@@ -3,6 +3,8 @@ import { Input, Button } from 'antd';
 
 import { useCreateList } from './hooks';
 
+const PLACEHOLDER = 'Add a new todo list';
+
 export const CreateList = () => {
   const { createTodoList } = useCreateList();
   const [inputValue, setInputValue] = useState('');
@@ -31,6 +33,7 @@ export const CreateList = () => {
         value={inputValue}
         onKeyDown={handleKeyDown}
         onChange={handleInputChange}
+        placeholder={PLACEHOLDER}
       />
       <Button onClick={handleSubmit}>Create New Todo List</Button>
     </div>

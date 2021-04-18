@@ -5,6 +5,8 @@ import { useCreateTodo } from './hooks';
 
 import './CreateTodo.scss';
 
+const PLACEHOLDER = 'Add a new todo item to the list';
+
 export const CreateTodo = () => {
   const { createTodo } = useCreateTodo();
   const [inputValue, setInputValue] = useState('');
@@ -33,6 +35,7 @@ export const CreateTodo = () => {
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
+        placeholder={PLACEHOLDER}
       />
       <Button onClick={handleSubmit}>Create Todo</Button>
     </div>
