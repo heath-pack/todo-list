@@ -1,20 +1,19 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { Input, Button } from 'antd';
 
-import { useCreateList } from './hooks';
+import { useCreateTodo } from './hooks';
 
-<<<<<<< HEAD
-const PLACEHOLDER = 'Add a new todo list';
+import './CreateTodo.scss';
 
-=======
->>>>>>> origin/master
-export const CreateList = () => {
-  const { createTodoList } = useCreateList();
+const PLACEHOLDER = 'Add a new todo item to the list';
+
+export const CreateTodo = () => {
+  const { createTodo } = useCreateTodo();
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = () => {
     if (inputValue) {
-      createTodoList(inputValue);
+      createTodo(inputValue);
       setInputValue('');
     }
   };
@@ -30,18 +29,15 @@ export const CreateList = () => {
   };
 
   return (
-    <div>
+    <div className="input-with-button">
       <Input
         type="text"
         value={inputValue}
-        onKeyDown={handleKeyDown}
         onChange={handleInputChange}
-<<<<<<< HEAD
+        onKeyDown={handleKeyDown}
         placeholder={PLACEHOLDER}
-=======
->>>>>>> origin/master
       />
-      <Button onClick={handleSubmit}>Create New Todo List</Button>
+      <Button onClick={handleSubmit}>Create Todo</Button>
     </div>
   );
 };

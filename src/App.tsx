@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-import { TodoPage } from './app/todos/TodoPage';
+import { TodoPage } from './app/todos/todoPage/TodoPage';
 import { NavList } from './app/todos/todosNavList/NavList';
 import { CreateList } from './app/todos/createNewList/CreateList';
 

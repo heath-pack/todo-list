@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
 import { Checkbox, Button } from 'antd';
 
-import { Todo } from '../reducer';
 import { useTodoDispatch } from './hooks';
+
+import type { Todo } from '../../types';
+
+import './todo.scss';
 
 export const TodoItem: FC<Todo> = ({ id, completed, value }) => {
   const { markCompleted, deleteTodoItem } = useTodoDispatch();
@@ -12,7 +15,7 @@ export const TodoItem: FC<Todo> = ({ id, completed, value }) => {
 
   return (
     <div className="todo">
-      <div className="todo-content">{value}</div>
+      <div>{value}</div>
 
       <div>
         <Checkbox checked={completed} onClick={completeTodo} />

@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { Todo } from './reducer';
+import type { Todo } from './types';
 
 type AddTodo = { value: string; listId: Todo['listId'] };
 
@@ -15,3 +15,5 @@ export const addTodoToList = createAction<string>('addTodoToList');
 export const addTodoList = createAction<string>('addTodoList');
 
 export const deleteList = createAction<string>('deleteList');
+
+export const setSelectedList = createAction<string>('setSelectedList');

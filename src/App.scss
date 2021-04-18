@@ -39,7 +39,9 @@ div#root {
 
   .body {
     display: flex;
-    height: 100%;
+
+    /* body is equal to 100vh - header height (64px) */
+    height: calc(100vh - 64px);
 
     > aside {
       border-right: 1px solid #efefef;

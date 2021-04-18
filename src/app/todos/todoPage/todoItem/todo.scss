@@ -1,0 +1,17 @@
+div.todo {
+  display: flex;
+  padding: 1.5em 1em;
+  border-bottom: 1px solid #efefee;
+
+  > div:first-of-type {
+    display: flex;
+    flex: 1 1 70%;
+  }
+
+  > div:last-of-type {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}

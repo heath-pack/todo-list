@@ -7,27 +7,11 @@ import {
   deleteTodo,
   addTodoToList,
   addTodoList,
-  deleteList
+  deleteList,
+  setSelectedList
 } from './actions';
 
-export type Todo = {
-  id: string;
-  value: string;
-  completed: boolean;
-  listId: string;
-};
-
-type Todos = Record<Todo['id'], Todo>;
-
-type TodoList = { listId: Todo['listId']; name: string };
-
-type TodoLists = Record<TodoList['listId'], TodoList>;
-
-type TodosState = {
-  todos: Todos;
-  todoLists: TodoLists;
-  selectedList: TodoList['listId'];
-};
+import type { TodosState } from './types';
 
 const initialState: TodosState = {
   todoLists: {},
@@ -77,14 +61,14 @@ export const todosReducer = createReducer(initialState, (builder) => {
 
     delete state.todoLists[id];
 
-    const matchingTodos = Object.values(state.todos).filter(
-      (todo) => todo.listId !== id
-    );
-
-    state.todos = matchingTodos.reduce(
+    state.todos = Object.values(state.todos).reduce(
       (object, todo) => ({ ...object, [todo.id]: todo }),
       {}
     );
+  });
+
+  builder.addCase(setSelectedList, (state, action) => {
+    state.selectedList = action.payload;
   });
 
   builder.addDefaultCase((state, action) => {});
