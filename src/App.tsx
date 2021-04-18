@@ -15,13 +15,15 @@ function App() {
           <CreateList />
         </Layout.Header>
 
-        <Layout.Sider>
-          <NavList />
-        </Layout.Sider>
+        <div className="body">
+          <Layout.Sider>
+            <NavList />
+          </Layout.Sider>
 
-        <Layout.Content>
-          <TodoPage />
-        </Layout.Content>
+          <Layout.Content>
+            <TodoPage />
+          </Layout.Content>
+        </div>
       </Layout>
     </div>
   );
