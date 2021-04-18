@@ -1,0 +1,48 @@
+@import '~antd/dist/antd.dark.css';
+
+div#root {
+  height: 100%;
+  overflow: hidden;
+
+  > div.App {
+    height: 100%;
+  }
+}
+
+.layout {
+  display: flex;
+  height: 100%;
+
+  /* using !important because antd forces
+  flex-direction row for a layout with a sider */
+  flex-direction: column !important;
+
+  > header {
+    position: sticky;
+    top: 0;
+    padding: 1.5em 1em;
+    border-bottom: 1px solid #efefef;
+
+    > div {
+      display: flex;
+      margin: auto;
+
+      > input {
+        flex: 1 1 60%;
+      }
+
+      > button {
+        flex: 1 1 40%;
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+    height: 100%;
+
+    > aside {
+      border-right: 1px solid #efefef;
+    }
+  }
+}
