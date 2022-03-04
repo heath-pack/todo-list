@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { completeTodo, deleteTodo } from '../../actions';
+
+import { completeTodo, deleteTodo } from '../../slice';
 
 export const useTodoDispatch = () => {
   const dispatch = useDispatch();

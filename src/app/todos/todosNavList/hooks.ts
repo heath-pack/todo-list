@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setSelectedList } from '../actions';
+import { setSelectedList } from '../slice';
 import { getTodoLists } from '../selectors';
 
 export const useNavList = () => {

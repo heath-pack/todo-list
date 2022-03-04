@@ -16,3 +16,5 @@ export type TodosState = {
   todoLists: TodoLists;
   selectedList: TodoList['listId'];
 };
+
+export type AddTodo = { value: string; listId: Todo['listId'] };

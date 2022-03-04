@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { addTodoList } from '../actions';
+import { addTodoList } from '../slice';
 
 export const useCreateList = () => {
   const dispatch = useDispatch();

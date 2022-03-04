@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo } from '../actions';
 
+import { addTodo } from '../slice';
 import { getSelectedList } from '../selectors';
 
 export const useCreateTodo = () => {

@@ -1,9 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
-import { todosReducer } from './todos/reducer';
+import { todosReducer, actions } from './todos/slice';
 
 export const store = configureStore({
-  reducer: todosReducer
+  devTools: { actionCreators: { ...actions } },
+  reducer: {
+    todos: todosReducer
+  }
 });
 
 export type RootState = ReturnType<typeof store.getState>;

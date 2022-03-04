@@ -4,11 +4,12 @@ import { RootState } from '../store';
 
 import type { Todo } from './types';
 
-const todosSelector = (state: RootState) => state?.todos || {};
+const todosSelector = (state: RootState) => state?.todos?.todos || {};
 
-const selectedListSelector = (state: RootState) => state?.selectedList || '';
+const selectedListSelector = (state: RootState) =>
+  state?.todos?.selectedList || '';
 
-const todosListSelector = (state: RootState) => state?.todoLists || {};
+const todosListSelector = (state: RootState) => state?.todos?.todoLists || {};
 
 export const getTodoLists = createSelector(todosListSelector, (todos) =>
   Object.values(todos)
